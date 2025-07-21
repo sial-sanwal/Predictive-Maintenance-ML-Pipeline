@@ -8,6 +8,8 @@ from src.preprocess import preprocess_data_for_prediction
 app = FastAPI()
 model = joblib.load("artifacts/model.pkl")
 
+
+
 @app.post("/predict")
 async def predict(file_telemetry: UploadFile = File(...), file_machines: UploadFile = File(...)):
     telemetry = pd.read_csv(file_telemetry.file, parse_dates=["datetime"])
