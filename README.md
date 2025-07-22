@@ -12,21 +12,25 @@ Source: [Kaggle - Microsoft Azure Predictive Maintenance](https://www.kaggle.com
 ## 🚀 Project Structure
 
 ├── data/
-│ ├── raw/ # Raw input CSV files from Kaggle
-│ └── output/ # Prediction output file
+│   ├── raw/               # Raw CSV files from Kaggle
+│   └── output/            # Prediction results
 ├── notebooks/
-│   └── EDA.ipynb
+│   └── EDA.ipynb          # Exploratory Data Analysis
 ├── src/
-│ ├── data_loader.py # Loads raw data files
-│ ├── preprocess.py # Preprocess and feature engineering
-│ ├── model.py # ML pipeline definition
-│ ├── train.py # End-to-end training script
-│ └── predict.py # Inference on test files
-├── test_telemetry.csv # Example test input
-├── test_machines.csv # Example test input
-├── model.pkl # Trained model artifact
-├── requirements.txt # Python dependencies
-└── README.md # Project overview and instructions
+│   ├── data_loader.py     # Data loading utilities
+│   ├── preprocess.py      # Feature engineering & transformation
+│   ├── model.py           # ML model pipeline definition
+│   ├── train.py           # Training script
+│   └── predict.py         # Prediction script
+├── test_telemetry.csv     # Sample test input
+├── test_machines.csv      # Sample machine metadata
+├── artifacts/
+│   └── model.pkl          # Trained model (saved after training)
+├── requirements.txt       # Python dependencies
+├── Dockerfile             # For containerizing the app
+├── app.py                 # FastAPI app for deployment
+└── README.md              # Project documentation
+
 
 
 
