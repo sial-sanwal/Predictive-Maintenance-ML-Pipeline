@@ -9,6 +9,11 @@ app = FastAPI()
 model = joblib.load("artifacts/model.pkl")
 
 
+@app.get("/")
+async def health_check():
+    return {"status": "running", "message": "API is live and serving predictions"}
+
+
 
 @app.post("/predict")
 async def predict(file_telemetry: UploadFile = File(...), file_machines: UploadFile = File(...)):
