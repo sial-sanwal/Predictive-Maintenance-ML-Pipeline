@@ -1,9 +1,10 @@
 __pycache__/
 venv/
+venv_new/
 *.pyc
 *.pyo
 *.pyd
-artifacts/
+
 .pytest_cache/
 notebooks/
 *.csv
