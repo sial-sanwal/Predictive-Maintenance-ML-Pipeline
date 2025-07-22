@@ -10,7 +10,7 @@ Source: [Kaggle - Microsoft Azure Predictive Maintenance](https://www.kaggle.com
 ---
 
 ## 🚀 Project Structure
-
+```
 ├── data/
 │   ├── raw/               # Raw CSV files from Kaggle
 │   └── output/            # Prediction results
@@ -30,7 +30,7 @@ Source: [Kaggle - Microsoft Azure Predictive Maintenance](https://www.kaggle.com
 ├── Dockerfile             # For containerizing the app
 ├── app.py                 # FastAPI app for deployment
 └── README.md              # Project documentation
-
+```
 
 
 
