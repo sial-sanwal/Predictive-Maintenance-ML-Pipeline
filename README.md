@@ -29,6 +29,7 @@ Source: [Kaggle - Microsoft Azure Predictive Maintenance](https://www.kaggle.com
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile             # For containerizing the app
 ├── app.py                 # FastAPI app for deployment
+├── train_pipeline.py      # Production Training Pipeline
 └── README.md              # Project documentation
 ```
 
@@ -53,10 +54,41 @@ This notebook helped inform the feature engineering and preprocessing steps.
 ```bash
 pip install -r requirements.txt
 ```
-### 2. Train the Model
+### 2. ```src/train.py``` — Minimal Training Script (For Quick Tests)
+This is a lightweight training script for quick development/testing.
+
+Run with:
+
 ```bash
 python src/train.py
 ```
+**What it does:**
+- Loads raw telemetry, machine, and failure data.
+
+- Merges and preprocesses data.
+
+- Trains the model and saves it to model.pkl.
+
+- Prints classification report to console.
+
+
+### ```train_pipeline.py```  — Full Production Training Pipeline
+This script includes full metrics logging and directory structure, recommended for production.
+
+Run With:
+```bash
+python train_pipeline.py
+```
+**What it does:**
+- Loads and preprocesses all raw data.
+
+- Splits data into training and testing sets.
+
+- Trains the model using ```build_model()```.
+
+- Saves the model to ```artifacts/model.pkl```.
+
+- Generates and saves classification metrics to ```artifacts/metrics.json.```
 
 ### 3. Make Predictions on Test Data
 
